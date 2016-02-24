@@ -1,0 +1,25 @@
+Shape Boxing - Documentation
+
+Player
+-Movement
+-Punching
+-Death
+-Instantiate
+-Multiplayer
+
+Level
+-Random Generation
+
+Light
+-Movement & Shrinkage
+
+Enemies
+-Movement
+-Attack
+
+Camera
+-Follow
+
+Power Ups
+-Instantiate
+-Apply bonuses
