@@ -12,14 +12,14 @@ public class GameManager : MonoBehaviour {
 	public GameObject enemyPrefab;
 	public int numEnemies;
 	private GameObject enemy;
-	private GameObject gameLight;
+	public GameObject GameLight { get; set; }
 	private Vector3 gameCenter;
 
 	// Use this for initialization
 	void Start () {
 		spawnPlayers (numPlayers, playerPrefab);
 		spawnEnemies (numEnemies, enemyPrefab);
-		gameLight = GameObject.FindGameObjectWithTag ("GameLight") as GameObject;
+		GameLight = GameObject.FindGameObjectWithTag ("GameLight") as GameObject;
 		gameCenter = transform.position;
 
 	}
@@ -36,7 +36,8 @@ public class GameManager : MonoBehaviour {
 			Vector3 spawnPosition = spawnPoint.transform.position;
 			Quaternion spawnRotation = spawnPoint.transform.rotation;
 			player = Instantiate (prefab, spawnPosition, spawnRotation) as GameObject;
-			player.GetComponent<PlayerController> ().setPlayerNumber(i+1);
+            player.GetComponent<PlayerController>().playerNumber = i+1;
+                //setPlayerNumber(i+1);
 			players.Add(player);
 		}
 	}
@@ -48,12 +49,6 @@ public class GameManager : MonoBehaviour {
 			Quaternion spawnRotation = spawnPoint.transform.rotation;
 			enemy = Instantiate(prefab, spawnPosition, spawnRotation) as GameObject;
 			enemy.GetComponent<EnemyController>().EnemySpawnPoint = spawnPoint;
-		}
-	}
-
-	public GameObject GameLight {
-		get {
-			return gameLight;
 		}
 	}
 

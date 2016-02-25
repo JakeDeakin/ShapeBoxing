@@ -3,22 +3,22 @@ using System.Collections;
 
 public class PlayerController : MonoBehaviour {
 
-	// Boolean values for the player's state
+    // Boolean values for the player's state
 
-	// Alive
-	private bool playerIsAlive;
-	// Punching
-	private bool playerIsPunching;
-	// Power ups
-	private bool playerSpeedBoost;
-	private bool playerStrongPunch;
-	private bool playerInvulnerable;	
+    // Alive
+    public bool playerIsAlive { get; set; }
+    // Punching
+    public bool playerIsPunching { get; set; }
+    // Power ups
+    public bool playerSpeedBoost { get; set; }
+    public bool playerStrongPunch { get; set; }
+    public bool playerInvulnerable {get; set; }
 
-	// player number
-	private int playerNumber;
+    // player number
+    public int playerNumber {get; set; }
 
-	private bool playerInside;
-	private GameManager gameManager;
+    public bool playerInside { get; set; }
+    private GameManager gameManager;
 	private LightController gameLightController;
 
 	// Use this for initialization
@@ -30,65 +30,8 @@ public class PlayerController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		playerIsInside();
-		print (playerInside);
 	}
 	
-	public void setPlayerIsAlive(bool alive){
-		playerIsAlive = alive;
-	}
-
-	public void setPlayerIsPunching(bool punching){
-		playerIsPunching = punching;
-	}
-
-	public void setPlayerSpeedBoost(bool speedboost){
-		playerSpeedBoost = speedboost;
-	}
-
-	public void setPlayerStrongPunch(bool strongpunch){
-		playerStrongPunch = strongpunch;
-	}
-
-	public void setPlayerInvulnerable(bool invulnerable){
-		playerInvulnerable = invulnerable;
-	}
-
-	public void setPlayerNumber(int number){
-		playerNumber = number;
-	}
-	
-	public bool getPlayerIsAlive(){
-		return playerIsAlive;
-	}
-	
-	public bool getPlayerIsPunching(){
-		return playerIsPunching;
-	}
-	
-	public bool getPlayerSpeedBoost(){
-		return playerSpeedBoost;
-	}
-	
-	public bool getPlayerStrongPunch(){
-		return playerStrongPunch;
-	}
-	
-	public bool getPlayerInvulnerable(){
-		return playerInvulnerable;
-	}
-
-	public int getPlayerNumber(){
-		return playerNumber;
-	}
-
-	#region New getter and setters
-
-	public bool PlayerInside {
-		get {
-			return playerInside;
-		}
-	}
-
 	public void playerIsInside(){
 		if (Vector3.Distance (transform.position, gameManager.transform.position) > gameLightController.LightRadius) {
 			playerInside = false;
@@ -97,5 +40,4 @@ public class PlayerController : MonoBehaviour {
 		}
 	}
 
-	#endregion
 }

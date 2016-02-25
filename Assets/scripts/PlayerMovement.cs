@@ -10,13 +10,13 @@ public class PlayerMovement : MonoBehaviour
 	private Animation glove;
 	private bool enableMovement;
 	private bool enableRotation;
-	private int playerNumber;
+	public int playerNumber;
 
 	// Use this for initialization
 	void Start (){
 			playerRigidbody = GetComponent<Rigidbody> ();
 			glove = GetComponentInChildren<Animation> ();
-			playerNumber = GetComponent<PlayerController> ().getPlayerNumber();
+			playerNumber = GetComponent<PlayerController> ().playerNumber;
 	}
 
 	// Update is called once per frame

@@ -3,43 +3,19 @@ using System.Collections;
 
 public class EnemyController : MonoBehaviour {
 
-	private GameObject enemyTarget;
-	private GameObject enemySpawnPoint;
+    public GameObject EnemyTarget { get; set; }
+    public GameObject EnemySpawnPoint { get; set; }
 
-	private GameManager gameManager;
+    public GameManager GameManager { get; set; }
 
 
-	// Use this for initialization
-	void Start () {
-		gameManager = GameObject.FindGameObjectWithTag ("GameManager").GetComponent<GameManager>();
+    // Use this for initialization
+    void Start () {
+		GameManager = GameObject.FindGameObjectWithTag ("GameManager").GetComponent<GameManager>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 	
-	}
-
-	public GameObject EnemyTarget {
-				get {
-						return enemyTarget;
-				}
-				set {
-						enemyTarget = value;
-				}
-		}
-
-	public GameObject EnemySpawnPoint {
-				get {
-						return enemySpawnPoint;
-				}
-				set {
-						enemySpawnPoint = value;
-				}
-		}
-
-	public GameManager GameManager {
-		get {
-			return gameManager;
-		}
 	}
 }
